@@ -1,8 +1,18 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Roboto_Serif, Roboto } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto_serif = Roboto_Serif({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-serif',
+})
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100','300', '400', '500', '700', '900'],
+  display: 'swap',
+  variable: '--font-roboto',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${roboto_serif.variable} ${roboto.variable} bg-bg`}>{children}</body>
     </html>
   )
 }

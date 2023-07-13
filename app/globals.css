@@ -16,12 +16,21 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+
+  html{
+      scroll-behavior: smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      @apply font-serif font-bold text-4xl text-bold-text;
+  }
+
+  p,a {
+      @apply font-sans text-2xl font-normal text-text;
+  }
 }
