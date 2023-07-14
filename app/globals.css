@@ -29,8 +29,17 @@
   h6 {
       @apply font-serif font-bold text-4xl text-bold-text;
   }
+  h1{
+    @apply text-9xl tracking-wide;
+  }
 
   p,a {
-      @apply font-sans text-2xl font-normal text-text;
+      @apply font-sans text-2xl font-normal text-text tracking-wide;
   }
 }
+
+@layer components {
+  .custom-btn{
+      @apply bg-primary text-bold-text text-3xl py-4 w-48 text-center rounded-md tracking-normal; 
+  }
+}   
