@@ -30,7 +30,7 @@
       @apply font-serif font-bold text-4xl text-bold-text;
   }
   h1{
-    @apply text-9xl tracking-wide;
+    @apply text-6xl md:text-7xl lg:text-9xl tracking-wide font-semibold;
   }
 
   p,a {
@@ -40,6 +40,6 @@
 
 @layer components {
   .custom-btn{
-      @apply bg-primary text-bold-text text-3xl py-4 w-48 text-center rounded-md tracking-normal; 
+      @apply bg-primary text-bold-text text-2xl py-3 w-40 md:w-44 text-center rounded-md tracking-tight; 
   }
 }   
