@@ -27,7 +27,7 @@
   h4,
   h5,
   h6 {
-      @apply font-serif font-bold text-4xl text-bold-text;
+      @apply font-serif font-bold text-2xl md:text-3xl text-bold-text;
   }
   h1{
     @apply text-6xl md:text-7xl lg:text-9xl tracking-wide font-semibold;
@@ -41,5 +41,14 @@
 @layer components {
   .custom-btn{
       @apply bg-primary text-bold-text text-2xl py-3 w-40 md:w-44 text-center rounded-md tracking-tight; 
+  }
+
+  .text-shadow {
+    text-shadow: 0.3px 0.5px 1.5px rgba(255, 255, 255, 0.4),
+                 0.4px 0.6px 1.5px rgba(255, 255, 255, 0.3),
+                 0.5px 0.7px 1.5px rgba(255, 255, 255, 0.2);
+  }
+  .custom-inner-shadow {
+    box-shadow: -2px -11px 110px 16px rgba(0,0,0,0.80) inset;
   }
 }   
