@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Categories } from "@/types/types";
 import backPic from "../../public/images/category-back.jpg";
 import cardioPic from "../../public/images/category-cardio.jpg";
@@ -79,14 +80,14 @@ export default function CategoryMasonry() {
     return (
         <section className="min-h-screen w-full flex flex-col items-start gap-8">
             <h2>Browse by popular muscle groups</h2>
-            <div className="md:columns-2 lg:columns-3 lg:p-20 w-full h-full">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full">
                 {
                     categories.map(category => (
-                        <figure className="relative flex m-6 min-w-fit min-h-fit rounded-md" key={category.category}>
+                        <figure className="relative flex min-w-fit min-h-fit rounded-md" key={category.category}>
                             <div className="absolute inset-0 bg-bg-secondary z-20 pointer-events-none bg-transparent custom-inner-shadow"></div>
-                            <Image src={category.asset} alt={`Image by ${category.alt} on Freepik`} className="pointer-events-none rounded-md" />
-                            <figcaption className="z-30">
-                                <h3 className="absolute left-2 bottom-0 font-medium">{`${category.category.charAt(0).toUpperCase()}${category.category.substring(1)}`}</h3>
+                            <Image src={category.asset} alt={`Image by ${category.alt} on Freepik`} className="pointer-events-none rounded-md aspect-video object-cover" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0aSirBwAEJQHD7HKoYwAAAABJRU5ErkJggg=="/>
+                            <figcaption className="absolute inset-0 z-30 group">
+                                <Link className="absolute left-2 bottom-0 cursor-pointer font-medium text-3xl md:text-5xl text-bold-text transition-all duration-200 hover:text-primary" href="/">{`${category.category.charAt(0).toUpperCase()}${category.category.substring(1)}`}</Link>
                                 <a className="text-sm opacity-20 absolute right-2 bottom-0 hover:underline" target="blank" href={category.url}>{`By ${category.alt} on Freepik`}</a>
                             </figcaption>
                         </figure>
