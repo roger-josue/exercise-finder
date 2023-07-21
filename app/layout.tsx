@@ -9,7 +9,7 @@ const roboto_serif = Roboto_Serif({
 })
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['100','300', '400', '500', '700', '900'],
+  weight: ['100', '300', '400', '500', '700', '900'],
   display: 'swap',
   variable: '--font-roboto',
 })
@@ -26,7 +26,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto_serif.variable} ${roboto.variable} bg-bg`}>{children}</body>
+      <body className={`${roboto_serif.variable} ${roboto.variable} bg-bg`}>
+        {/* TODO: Add navbar component */}
+        {children}
+        <footer className="w-full h-16 flex flex-wrap place-content-center">
+          <h1 className="text-lg sm:text-xl text-gray-500">Created by <b>Roger Vargas - {new Date().getFullYear()}</b></h1>
+        </footer>
+      </body>
     </html>
   )
 }

@@ -16,7 +16,7 @@ const baseOptions: CreateAxiosDefaults<string | undefined> = {
  */
 export const exerciseDB = axios.create(baseOptions);
 
-export async function getAllExercises(): Promise<Exercises[]> {
+export async function getAllExercises(): Promise<Exercises | string> {
     try {
         let response = await exerciseDB.get('/');
         return response.data;
@@ -26,7 +26,7 @@ export async function getAllExercises(): Promise<Exercises[]> {
     }
 }
 
-export async function getAllBodyParts(): Promise<string[] | AxiosError> {
+export async function getAllBodyParts(): Promise<string[] | string> {
     try {
         let response = await exerciseDB.get('/bodyPartList');
         return response.data;
@@ -36,7 +36,7 @@ export async function getAllBodyParts(): Promise<string[] | AxiosError> {
     }
 }
 
-export async function getExercisesByBodyPart(bodyPart: string): Promise<Exercises[] | AxiosError> {
+export async function getExercisesByBodyPart(bodyPart: string): Promise<Exercises | string> {
     try {
         let response = await exerciseDB.get(`/bodyPart/${bodyPart}`);
         return response.data;

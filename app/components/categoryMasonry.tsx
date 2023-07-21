@@ -87,7 +87,7 @@ export default function CategoryMasonry() {
                             <div className="absolute inset-0 bg-bg-secondary z-20 pointer-events-none bg-transparent custom-inner-shadow"></div>
                             <Image src={category.asset} alt={`Image by ${category.alt} on Freepik`} className="pointer-events-none rounded-md aspect-video object-cover" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0aSirBwAEJQHD7HKoYwAAAABJRU5ErkJggg=="/>
                             <figcaption className="absolute inset-0 z-30 group">
-                                <Link className="absolute left-2 bottom-0 cursor-pointer font-medium text-3xl md:text-5xl text-bold-text transition-all duration-200 hover:text-primary" href="/">{`${category.category.charAt(0).toUpperCase()}${category.category.substring(1)}`}</Link>
+                                <Link className="absolute left-2 bottom-2 cursor-pointer font-medium text-3xl md:text-5xl text-bold-text transition-all duration-200 hover:text-primary" href={`/categories/${category.category}`}>{`${category.category.charAt(0).toUpperCase()}${category.category.substring(1)}`}</Link>
                                 <a className="text-sm opacity-20 absolute right-2 bottom-0 hover:underline" target="blank" href={category.url}>{`By ${category.alt} on Freepik`}</a>
                             </figcaption>
                         </figure>
