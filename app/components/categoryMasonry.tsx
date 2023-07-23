@@ -13,7 +13,7 @@ import upperLegsPic from "../../public/images/category-upper-legs.jpg";
 import waistPic from "../../public/images/category-waist.jpg";
 
 export default function CategoryMasonry() {
-
+    //TODO: Chnge lower arms picture to forearm picture (use lower arm in upper arm)
     const categories: Categories = [
         {
             category: "back",
