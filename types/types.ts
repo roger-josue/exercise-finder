@@ -13,6 +13,7 @@ export interface Exercise {
 
 export type Categories = Category[];
 export interface Category {
+  id: string;
   category: string;
   asset: StaticImageData;
   url: string;
