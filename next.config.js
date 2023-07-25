@@ -6,6 +6,11 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'edb-4rme8.ondigitalocean.app',
             pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'api.exercisedb.io',
+            pathname: '/**',
           }
         ],
       }
