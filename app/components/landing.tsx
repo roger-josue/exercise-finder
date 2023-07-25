@@ -9,8 +9,8 @@ export default function Landing() {
             <h1 className="z-10 max-w-screen-md mt-6 xl:mt-24 text-shadow">Fitness Exercises</h1>
             <p className="z-10 max-w-screen-lg">Browse a wide variety of available exercises to integrate into your gym or at-home routine. Any muscle you need to grow, we&#39;ve got your back!</p>
             <div className="max-[430px]:self-center mt-24 flex gap-4 md:gap-8">
-                <Link href="/" className="z-10 custom-btn" >Get started</Link>
-                <Link href="/" className="z-10 custom-btn bg-bg-secondary" >Exercises</Link>
+                <Link href="/categories" className="z-10 custom-btn" >Browse by category</Link>
+                <Link href="/search" className="z-10 custom-btn bg-bg-secondary" >Search</Link>
             </div>
             <figure className="hidden xl:block absolute right-0 w-3/4 z-0">
                 <Image priority placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src={barbellPic} alt="Photo by Anastase Maragos on Unsplash" className="pointer-events-none" />

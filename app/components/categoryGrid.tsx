@@ -12,7 +12,7 @@ import upperArmsPic from "../../public/images/category-upper-arms.jpg";
 import upperLegsPic from "../../public/images/category-upper-legs.jpg";
 import waistPic from "../../public/images/category-waist.jpg";
 
-export default function CategoryMasonry() {
+export default function CategoryGrid() {
     const categories: Categories = [
         {
             id: "back",
