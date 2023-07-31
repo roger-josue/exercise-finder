@@ -2,18 +2,18 @@
 import Image from 'next/image';
 import logo from '/public/ExerciseFinder.svg';
 import Link from "next/link";
-// import useCurrentRoute from '../../Hooks/useCurrentRoute';
-// import useWindowListener from '../../Hooks/useWindowListener';
-import { useState, useRef, useLayoutEffect, KeyboardEvent, ChangeEvent, MouseEvent } from 'react';
+import useCurrentRoute from '../../Hooks/useCurrentRoute';
+import { useState, useRef, useLayoutEffect, KeyboardEvent, ChangeEvent, MouseEvent, useEffect } from 'react';
 
 export default function Navbar() {
 
     const [toggleModal, setToggleModal] = useState(false);
-
-    // const closeOnclick = ["dialog", "ul"];
     const modal = useRef<HTMLDialogElement>(null);
-    // TODO: Fix TS errors on Hooks imported from previous JS-React projects:
-    // const currentRoute = useCurrentRoute();
+    const currentRoute = useCurrentRoute();
+
+
+    const closeOnclick: string[] = ["dialog", "ul"];
+
 
     const keyboardToggle = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.type === "keydown" && e.code === 'Enter') {
@@ -26,24 +26,19 @@ export default function Navbar() {
         }
     }
     const handleClickExit = (e: MouseEvent<HTMLDialogElement, globalThis.MouseEvent>) => {
-        const { type, target } = e;
-        // TODO: Fix target.localname not found in target element:
-        // if (type === "click" && closeOnclick.includes(target.localName))
-        //     setToggleModal(false);
+        if (e.type === "click" && closeOnclick.includes(e.currentTarget.localName)) setToggleModal(false);
     }
-
     const handleKeyExit = (e: KeyboardEvent<HTMLDialogElement>) => {
         const { type, code, target } = e;
         if (type === "keydown" && code === "Escape")
             setToggleModal(false);
     }
-    // TODO: Fix TS errors on Hooks imported from previous JS-React projects:
-    // useWindowListener('resize', (e) => {
-    //     console.log(e.target.innerWidth);
-    //     if (e.target.innerWidth >= 640) {
-    //         setToggleModal(false);
-    //     }
-    // });
+    const windowListener = () => {
+        if (window.innerWidth >= 640) {
+            setToggleModal(false);
+        }
+    }
+
 
     useLayoutEffect(() => {
         if (toggleModal) {
@@ -51,25 +46,37 @@ export default function Navbar() {
         } else {
             modal.current?.close();
         }
-    }, [toggleModal, setToggleModal])
+    }, [toggleModal, setToggleModal]);
+    /* 
+    Window listener triggers when the modal is opened and the screen is resized bigger than 640px. 
+    Closes the modal as soon as it reaches the threshold
+    */
+    useEffect(() => {
+        window.addEventListener('resize', windowListener);
+
+        return () => {
+            window.removeEventListener("resize", windowListener);
+        };
+    }, [windowListener]);
+
 
     const menuList: JSX.Element =
         <>
             <li>
-                <Link href="/" className="font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight">Home</Link>
+                <Link href="/" className={`font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === '/') ? 'text-primary' : ''}`}>Home</Link>
             </li>
             <li>
-                <Link href="/categories" className="font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight">Categories</Link>
+                <Link href="/categories" className={`font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === 'categories') ? 'text-primary' : ''}`}>Categories</Link>
             </li>
             <li>
-                <Link href="/search" className="justify-self-start font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight">Search</Link>
+                <Link href="/search" className={`justify-self-start font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === 'search') ? 'text-primary' : ''} `}>Search</Link>
             </li>
         </>
 
 
     return (
         <>
-            <nav className={`w-screen m-auto h-20 px-4 xl:px-20 sticky top-0 z-40 ${(toggleModal) ? 'bg-bg-secondary' : 'bg-bg' }`}>
+            <nav className={`w-screen m-auto h-20 px-4 xl:px-20 sticky top-0 z-50 ${(toggleModal) ? 'bg-bg-secondary' : 'bg-bg'}`}>
                 <div className='w-full h-20 flex flex-wrap items-center justify-between gap-6 bg-inherit'>
                     <Link href="/">
                         <Image src={logo} width={224} height={64} alt="logo" />
@@ -92,7 +99,7 @@ export default function Navbar() {
             </nav>
             {
                 (toggleModal) &&
-                <dialog ref={modal} onKeyDown={(e) => handleKeyExit(e)} onClick={(e) => handleClickExit(e)} className="fixed z-30 inset-0 w-screen h-screen flex flex-col place-content-center items-center bg-bg-secondary bg-opacity-90">
+                <dialog ref={modal} onKeyDown={(e) => handleKeyExit(e)} onClick={(e) => handleClickExit(e)} className="fixed z-40 inset-0 w-screen h-screen flex flex-col place-content-center items-center bg-bg-secondary bg-opacity-90">
                     <ul className=" h-16 flex flex-col place-content-center gap-8 grow text-4xl text-center tracking-wider">
                         {menuList}
                     </ul>
