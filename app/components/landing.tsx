@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Landing() {
 
     return (
-        <section className="relative min-h-[80vh] xl:min-h-screen w-full flex flex-col items-start gap-8 mb-16 xl:mb-0">
+        <section className="relative min-h-[65vh] xl:min-h-screen w-full flex flex-col max-lg:justify-center items-start gap-8 mb-16 xl:mb-0">
             <h1 className="z-10 max-w-screen-md mt-6 xl:mt-24 text-shadow">Fitness Exercises</h1>
             <p className="z-10 max-w-screen-lg">Browse a wide variety of available exercises to integrate into your gym or at-home routine. Any muscle you need to grow, we&#39;ve got your back!</p>
             <div className="w-full max-[430px]:self-center mt-24 flex max-[390px]:flex-col gap-4 md:gap-8">

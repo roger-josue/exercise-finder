@@ -87,7 +87,7 @@ export default function CategoryGrid() {
     ];
 
     return (
-        <section className="min-h-screen w-full flex flex-col items-start gap-8">
+        <section className="min-h-screen w-full flex flex-col items-start gap-16">
             <h2>Browse by popular muscle groups</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full">
                 {
