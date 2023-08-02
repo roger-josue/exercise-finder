@@ -52,10 +52,16 @@
     box-shadow: -2px -11px 110px 16px rgba(0,0,0,0.80) inset;
   }
 
-  .fancy-radius {
+  .fancy-radius-1 {
     border-radius: 30% 70% 67% 33% / 33% 27% 73% 67%;
   }
-  .fancy-radius-rounded {
+  .fancy-radius-2 {
     border-radius: 53% 47% 46% 54% / 37% 54% 46% 63%;
+  }
+  .fancy-radius-3 {
+    border-radius: 80% 20% 36% 64% / 24% 43% 57% 76%;
+  }
+  .fancy-radius-4 {
+    border-radius: 80% 20% 23% 77% / 54% 43% 57% 46%;
   }
 }   
