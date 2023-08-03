@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image"
 
-export type Exercises = Exercise[]
+export type Exercises = Exercise[];
 
 export interface Exercise {
   bodyPart: string
@@ -18,5 +18,13 @@ export interface Category {
   asset: StaticImageData;
   url: string;
   alt: string;
+}
+
+export type SlideImages = SlideImage[];
+export interface SlideImage {
+  id: string;
+  author: string;
+  asset: StaticImageData;
+  url: string;
 }
 
