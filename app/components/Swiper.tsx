@@ -8,13 +8,13 @@ export default function Swiper({ children }: { children: JSX.Element[] }) {
     const swiperRef = useRef<HTMLDivElement>(null);
 
     const handleSwiperPosition = () => {
+        //Get the overflowed width of the swiper
         const scrollWidth: number = swiperRef.current!.scrollWidth;
+        //Get the amount of children passed down to the swiper
         const amountOfchildren: number = swiperRef.current!.childElementCount;
+        // Calculate the step size taking into account the width and the amount of children
         const step: number = scrollWidth / amountOfchildren;
-        // console.log(scrollWidth);
-        // console.log(amountOfchildren);
-        // console.log(step);
-        // console.log(amountOfchildren % scrollWidth);
+        // Select the next position relative to the current position ( Works like a threshold )
         if (swiperPosition + step >= scrollWidth) {
             setSwiperPosition(0);
         } else if (swiperPosition > 0) {
