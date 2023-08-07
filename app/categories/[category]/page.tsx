@@ -1,6 +1,23 @@
 import ExerciseCard from "@/app/components/exerciseCard";
-import { getExercisesByBodyPart } from "@/exerciseDB/exerciseData"
-import { Exercises, Exercise } from "@/types/types";
+import { Exercise } from "@/types/types";
+
+export async function getExercisesByBodyPart(bodyPart: string) {
+    const options: RequestInit = {
+        headers: {
+            'X-RapidAPI-Key': process.env.XRapidAPIKey!,
+            'X-RapidAPI-Host': process.env.XRapidAPIHost!
+        }
+    }
+
+    let res = await fetch(`${process.env.XRapidAPIBaseURL}/bodyPart/${bodyPart}`, options)
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+    }
+
+    return res.json()
+}
+
 
 export default async function Home({ params }: { params: { category: string } }) {
 
