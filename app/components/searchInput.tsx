@@ -19,7 +19,7 @@ export default function SearchInput() {
         if (searchInput.trim().length > 0) {
             const params = new URLSearchParams(searchParams.toString());
             params.set('search', searchInput);
-            router.push(`/search#search-result?${params.toString()}`);
+            router.push(`/search?${params.toString()}#search-result`);
         } else {
             router.push('/search#top');
         }

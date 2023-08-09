@@ -45,7 +45,7 @@ export default function SearchSwipper() {
 
     return (
         <section className="relative w-screen sm:w-full flex flex-col items-start gap-16 mb-10 sm:rounded-md sm:p-4 xl:p-10">
-            <div className="absolute inset-0 z-40 bg-bg-secondary bg-opacity-50 sm:rounded-md pointer-events-none flex flex-col gap-8 lg:gap-10 p-4 pt-8 min-[430px]:p-8 justify-center">
+            <div className="absolute inset-0 z-40 bg-bg-secondary bg-opacity-50 sm:rounded-md pointer-events-none flex flex-col gap-8 lg:gap-10 p-4 pt-8 min-[430px]:p-8 xl:p-12 justify-center">
                 <h2 className="max-[400px]:text-3xl text-4xl sm:5xl md:text-6xl lg:text-7xl md:w-3/4 tracking-wide font-semibold">Filter your favorite exercises by name </h2>
                 <SearchInput />
             </div>
