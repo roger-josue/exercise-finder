@@ -22,7 +22,7 @@ export async function getExercisesByBodyPart(bodyPart: string) {
 export default async function Home({ params }: { params: { category: string } }) {
 
     const data = await getExercisesByBodyPart(params.category);
-    const exercises = (typeof data === "string") ? [] : data;
+    const exercises = data;
 
     return (
         <main className="flex min-h-screen w-screen flex-col py-16 px-4 xl:p-20 gap-8">

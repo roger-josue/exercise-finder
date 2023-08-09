@@ -12,7 +12,7 @@ export default function Landing() {
             <p className="z-10 max-w-screen-lg">Browse a wide variety of available exercises to integrate into your gym or at-home routine. Any muscle you need to grow, we&#39;ve got your back!</p>
             <div className="w-full max-[430px]:self-center mt-24 flex max-[390px]:flex-col max-[390px]:px-6 gap-4 md:gap-8">
                 <Link href="/categories" className="z-10 custom-btn max-[390px]:w-full" >Browse by category</Link>
-                <Link href="/search" className="z-10 custom-btn max-[390px]:w-full bg-bg-secondary" >Search</Link>
+                <Link href="/search#top" className="z-10 custom-btn max-[390px]:w-full bg-bg-secondary" >Search</Link>
             </div>
             <figure className="hidden xl:block absolute right-0 w-3/4 z-0">
                 <Image priority placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src={barbellPic} alt="Photo by Anastase Maragos on Unsplash" className="pointer-events-none" />

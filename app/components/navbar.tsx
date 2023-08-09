@@ -69,7 +69,7 @@ export default function Navbar() {
                 <Link href="/categories" className={`font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === 'categories') ? 'text-primary' : ''}`}>Categories</Link>
             </li>
             <li>
-                <Link href="/search" className={`justify-self-start font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === 'search') ? 'text-primary' : ''} `}>Search</Link>
+                <Link href="/search#top" className={`justify-self-start font-semibold lg:font-normal text-bold-text max-[640px]:text-4xl text-xl tracking-tight transition-all duration-200 sm:focus:text-primary hover:text-primary ${(currentRoute === 'search') ? 'text-primary' : ''} `}>Search</Link>
             </li>
         </>
 

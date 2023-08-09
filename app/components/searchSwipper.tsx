@@ -6,6 +6,7 @@ import searchPic4 from "../../public/images/search-4.jpg";
 import searchPic5 from "../../public/images/search-5.jpg";
 import Swiper from "./Swiper";
 import { SlideImages } from "@/types/types";
+import SearchInput from "./searchInput";
 
 export default function SearchSwipper() {
 
@@ -46,7 +47,7 @@ export default function SearchSwipper() {
         <section className="relative w-screen sm:w-full flex flex-col items-start gap-16 mb-10 sm:rounded-md sm:p-4 xl:p-10">
             <div className="absolute inset-0 z-40 bg-bg-secondary bg-opacity-50 sm:rounded-md pointer-events-none flex flex-col gap-8 lg:gap-10 p-4 pt-8 min-[430px]:p-8 justify-center">
                 <h2 className="max-[400px]:text-3xl text-4xl sm:5xl md:text-6xl lg:text-7xl md:w-3/4 tracking-wide font-semibold">Filter your favorite exercises by name </h2>
-                <input className="pointer-events-auto w-full sm:w-3/4 lg:w-2/4 text-text tracking-wide text-lg lg:text-xl h-16 rounded-md border-none pl-2 bg-bg-secondary bg-opacity-75 focus:bg-opacity-95 outline-secondary transition-all duration-200" type="text" name="search" id="search" placeholder="Search exercises" />
+                <SearchInput />
             </div>
             <Swiper>
                 {
